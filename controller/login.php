@@ -1,4 +1,5 @@
 <?php
+include("../controller/common/fileIO.php");
 
 $uname="";
 $uname_error="";
@@ -42,11 +43,8 @@ if( isset($_POST["login"]))
 
     if($hasError==false)
     {
-        print_r($uname);
-        print_r($pass);
-        print_r($type);
-        $string= file_get_contents("./assets/data.json");
-        print_r(json_decode($string,true));
+        $loginData=login($uname, $pass, $type);
+        print_r($loginData);
     }
 }
 

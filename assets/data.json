@@ -1,10 +1,12 @@
 [
     {
         "uname":"ifty64bit",
-        "pass": "12345"
+        "pass": "12345",
+        "role": "admin"
     },
     {
         "uname":"test",
-        "pass": "12345"
+        "pass": "12345",
+        "role": "user"
     }
 ]

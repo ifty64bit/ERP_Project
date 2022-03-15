@@ -8,7 +8,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="./assets/login.css">
-	<title>Login</title>
+	<title>Home</title>
 </head>
 <body>
 	<section id="header">
@@ -18,38 +18,14 @@
 	</section>
 	<section id="main">
 		<div class="main_wrapper">
-			<form action="" method="POST">
-				<table>
-					<tr>
-						<td>Login As:</td>
-						<td>
-							<select name="login_as">
-								<option value="stuff">Stuff</option>
-								<option value="admin">Admin</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>User Name:</td>
-						<td>
-							<input type="text" name="uname">
-						</td>
-						<td><?php echo $uname_error ?></td>
-					</tr>
-					<tr>
-						<td>Password:</td>
-						<td>
-							<input type="password" name="pass">
-						</td>
-						<td><?php echo $pass_error ?></td>
-					</tr>
-					<tr>
-						<td colspan="2" style="text-align: center;">
-							<input class="btn" type="submit" name="login" value="Log in">
-						</td>
-					</tr>
-				</table>
-			</form>
+			<div>
+				<h1 style="font-size: 5rem;">Welcome To ERP System</h1>
+				
+			</div>
+			<div style="display:flex; justify-content: space-evenly;">
+				<a href="./view/login.php"><button class="btn">Login</button></a>
+				<a href="./view/login.php"><button class="btn">Signup</button></a>
+			</div>
 		</div>
 	</section>
 </body>
