@@ -1,11 +1,14 @@
 <?php
-include("../controller/common/fileIO.php");
+session_start();
+$rootPath = $_SERVER['DOCUMENT_ROOT'];
+include($rootPath."/ERP/controller/common/fileIO.php");
 
 $uname="";
 $uname_error="";
 $pass="";
 $pass_error="";
 $type="";
+$loginErr="";
 $hasError=false;
 
 if( isset($_POST["login"]))
@@ -44,7 +47,15 @@ if( isset($_POST["login"]))
     if($hasError==false)
     {
         $loginData=login($uname, $pass, $type);
-        print_r($loginData);
+        if($loginData == false)
+        {
+            $loginErr="Invalid Username or Password";
+        }
+        else
+        {
+            $_SESSION['user']=$loginData['uname'];
+            header("Location: ../view/index.php");
+        }
     }
 }
 

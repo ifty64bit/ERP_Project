@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../assets/login.css">
+	<link rel="stylesheet" type="text/css" href="../assets/global.css">
 	<title>Login</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
 		</div>
 	</section>
 	<section id="main">
-		<div class="main_wrapper">
+		<div class="main-wrapper blur-bg">
 			<form action="" method="POST">
 				<table>
 					<tr>
@@ -42,6 +42,11 @@
 							<input type="password" name="pass">
 						</td>
 						<td><?php echo $pass_error ?></td>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: center;">
+							<?php echo $loginErr ?>
+						</td>
 					</tr>
 					<tr>
 						<td colspan="2" style="text-align: center;">
