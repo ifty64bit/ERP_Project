@@ -1,3 +1,6 @@
+<?php
+include("../controller/common/redir.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -17,7 +17,7 @@
         return false;
     }
 
-    function addUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary)
+    function addUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary,$photo)
     {
         global $data;
         global $myfile;
@@ -34,13 +34,13 @@
             'phone'=>$phone,
             'email'=>$email,
             'salary'=>$salary,
-            'account-status'=>'active'
+            'account-status'=>'active',
+            'photo'=>$photo
         );
         array_push($data,$newUser);
         echo "<br>";
         print_r(json_encode($data));
         file_put_contents($rootPath."/ERP/assets/data.json",json_encode($data));
-        //fwrite($myfile, json_encode($data));
         fclose($myfile);
     }
 

@@ -252,7 +252,7 @@
             list($width, $height) = getimagesize( $filename );
             move_uploaded_file($filename,  $destFile);
 
-            addUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary,$filename);
+            addUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary,$uniquesavename . '.jpg');
             header("Location: ./index.php");
         }
     }

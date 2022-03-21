@@ -1,4 +1,5 @@
 <?php
+    include('../controller/common/redir.php');
     include('../controller/AddUser.php');
     if(isset($_GET['uname']))
     {
