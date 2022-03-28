@@ -22,7 +22,6 @@
         global $data;
         global $myfile;
         global $rootPath;
-        echo gettype($myfile);
         $newUser=array(
             'uname'=>$uname,
             'pass'=>$pass,
@@ -41,6 +40,39 @@
         echo "<br>";
         print_r(json_encode($data));
         file_put_contents($rootPath."/ERP/assets/data.json",json_encode($data));
+        fclose($myfile);
+    }
+
+    function updateUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary,$photo)
+    {
+        global $data;
+        global $myfile;
+        global $rootPath;
+        $newArr=array();
+        foreach($data as $d)
+        {
+            if($d['uname']==$uname)
+            {
+                $newarr=array(
+                'uname'=>$uname,
+                'pass'=>$pass,
+                'firstName'=>$fname,
+                'lastName'=>$lname,
+                'dateOfBirth'=>"$date"."/"."$month"."/"."$year",
+                'role'=>$role,
+                'subRole'=>$subRole,
+                'phone'=>$phone,
+                'email'=>$email,
+                'salary'=>$salary,
+                'photo'=>$photo
+                );
+                array_push($newArr, $newarr);
+            }
+            else{
+                array_push($newArr,$d);
+            }
+        }
+        file_put_contents($rootPath."/ERP/assets/data.json",json_encode($newArr));
         fclose($myfile);
     }
 
@@ -71,7 +103,7 @@
             {
                 return $d;
             }
-            return false;
         }
+        return false;
     }
 ?>

@@ -1,29 +1,32 @@
 <?php
     include("../controller/common/fileIO.php");
     $target_dir = "../assets/uploads/";
-    $uname="";
+    $user=getUserByUname($_GET['uname']);
+    $uname=$user['uname'];
     $unameErr="";
-    $pass="";
+    $pass=$user['pass'];
     $passErr="";
-    $fname="";
+    $fname=$user['firstName'];
     $fnameErr="";
-    $lname="";
+    $lname=$user['lastName'];
     $lnameErr="";
-    $phone="";
+    $phone=$user['phone'];
     $phoneErr="";
-    $email="";
+    $email=$user['email'];
     $emailErr="";
-    $date="";
+    $dates=explode("/",$user['dateOfBirth']);
+    $date=$dates[0];
     $dateErr="";
-    $month="";
+    $month=$dates[1];
     $monthErr="";
-    $year="";
+    $year=$dates[2];
     $yearErr="";
-    $role="";
+    $role=$user['role'];
     $roleErr="";
     $subRole="";
-    $salary="";
-    $status="";
+    $salary=$user['salary'];
+    $status=$user['account-status'];
+    $photo=$user['photo'];
     $hasErr=false;
 
     function checkMail($email)
@@ -50,11 +53,6 @@
         {
             $hasErr=true;
             $unameErr="Username must be greater then 4";
-        }
-        elseif(getUserByUname($_POST['uname']) != false)
-        {
-            $hasErr=true;
-            $unameErr="User Already Exist";
         }
         else
         {   
@@ -213,14 +211,19 @@
 
         if($hasErr==false)
         {
-            $uniquesavename=time().uniqid(rand());
-            $destFile = $target_dir . $uniquesavename . '.jpg';
             $filename = $_FILES["photo"]["tmp_name"];
-            list($width, $height) = getimagesize( $filename );
-            move_uploaded_file($filename,  $destFile);
-
-            addUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary,$uniquesavename . '.jpg');
-            header("Location: ./index.php");
+            if(empty($_FILES["photo"]["tmp_name"]))
+            {
+                updateUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary,$photo);
+            }
+            else{
+                $uniquesavename=time().uniqid(rand());
+                $destFile = $target_dir . $uniquesavename . '.jpg';
+                list($width, $height) = getimagesize( $filename );
+                move_uploaded_file($filename,  $destFile);
+                updateUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary,$uniquesavename . '.jpg');
+            }
+            //header("Location: ./index.php");
         }
     }
 ?>

@@ -1,9 +1,11 @@
 <?php
     include('../controller/common/redir.php');
-    include('../controller/AddUser.php');
     if(isset($_GET['uname']))
     {
-        populate($_GET['uname']);
+        include('../controller/UpdateUser.php');
+    }
+    else{
+        include('../controller/AddUser.php');
     }
 ?>
 <!DOCTYPE html>
