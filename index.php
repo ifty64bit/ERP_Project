@@ -24,7 +24,6 @@
 			</div>
 			<div style="display:flex; justify-content: space-evenly;">
 				<a href="./view/login.php"><button class="btn">Login</button></a>
-				<a href="./view/login.php"><button class="btn">Signup</button></a>
 			</div>
 		</div>
 	</section>

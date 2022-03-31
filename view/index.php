@@ -24,18 +24,6 @@ include("../controller/common/redir.php");
                 <h3>Manage User</h3>
             </div>
         </a>
-
-        <a href="#">
-            <div class="card">
-                <h3>Add User</h3>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="card">
-                <h3>Add User</h3>
-            </div>
-        </a>
     </div>
 </body>
 </html>

@@ -20,7 +20,7 @@
 <body>
     <?php include("./components/Header.php")?>
     <div class="flex-center" style="height: 90vh;">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="" method="post" enctype="multipart/form-data" style="margin-top: 70px;">
             <fieldset  class="blur-bg">
                 <table>
                     <tr>
@@ -143,8 +143,8 @@
                         <td>
                             <select name="role" id="role">
                                 <option value="----" disabled selected>----</option>
-                                <option value="admin" <?php echo $date==''?'':'selected' ?>>Admin</option>
-                                <option value="stuff" <?php echo $date==''?'':'selected' ?>>Stuff</option>
+                                <option value="admin" <?php echo $role=='admin'?'selected':'' ?>>Admin</option>
+                                <option value="stuff" <?php echo $role=='stuff'?'selected':'' ?>>Stuff</option>
                             </select>
                         </td>
                         <td>
@@ -169,19 +169,28 @@
                             <td>
                                 <select name='status' id='status'>
                                     <option value='----' disabled selected>----</option>
-                                    <option value='active'", $status == '' ? '' : 'selected', ">Admin</option>
-                                    <option value='inactive'", $status == '' ? '' : 'selected', ">Stuff</option>
+                                    <option value='active'", $status == 'inactive' ? '' : 'selected', ">Active</option>
+                                    <option value='inactive'", $status == 'active' ? '' : 'selected', ">Inactive</option>
                                 </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan='2' style='text-align: center;'>
+                                <input type='submit' name='submit' class='btn' value='Update User'>
+                            </td>
+                        </tr>
+                        ";
+                    }
+                    else{
+                        echo "
+                        <tr>
+                            <td colspan='2' style='text-align: center;'>
+                                <input type='submit' name='submit' class='btn' value='Add User'>
                             </td>
                         </tr>
                         ";
                     }
                     ?>
-                    <tr>
-                        <td colspan="2" style="text-align: center;">
-                            <input type="submit" name="submit" class="btn" value="Add User">
-                        </td>
-                    </tr>
                 </table>
             </fieldset>
         </form>

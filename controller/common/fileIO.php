@@ -43,7 +43,7 @@
         fclose($myfile);
     }
 
-    function updateUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary,$photo)
+    function updateUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary, $accStatus, $photo)
     {
         global $data;
         global $myfile;
@@ -64,6 +64,7 @@
                 'phone'=>$phone,
                 'email'=>$email,
                 'salary'=>$salary,
+                'account-status'=>$accStatus,
                 'photo'=>$photo
                 );
                 array_push($newArr, $newarr);

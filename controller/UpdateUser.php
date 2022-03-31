@@ -27,6 +27,7 @@
     $salary=$user['salary'];
     $status=$user['account-status'];
     $photo=$user['photo'];
+    $accountStatus=$user['account-status'];
     $hasErr=false;
 
     function checkMail($email)
@@ -214,16 +215,16 @@
             $filename = $_FILES["photo"]["tmp_name"];
             if(empty($_FILES["photo"]["tmp_name"]))
             {
-                updateUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary,$photo);
+                updateUser($uname, $pass, $fname, $lname, $phone, $email, $date, $month, $year, $role, $subRole, $salary, $accountStatus, $photo);
             }
             else{
                 $uniquesavename=time().uniqid(rand());
                 $destFile = $target_dir . $uniquesavename . '.jpg';
                 list($width, $height) = getimagesize( $filename );
                 move_uploaded_file($filename,  $destFile);
-                updateUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary,$uniquesavename . '.jpg');
+                updateUser($uname, $pass, $fname, $lname, $phone, $email, $date, $month, $year, $role, $subRole, $salary, $accountStatus, $uniquesavename . '.jpg');
             }
-            //header("Location: ./index.php");
+            header("Location: ./index.php");
         }
     }
 ?>
