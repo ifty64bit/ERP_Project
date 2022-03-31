@@ -1,5 +1,6 @@
 <?php
     include("../controller/common/fileIO.php");
+    include("../model/db_config.php");
     $target_dir = "../assets/uploads/";
     $uname="";
     $unameErr="";
@@ -219,8 +220,16 @@
             list($width, $height) = getimagesize( $filename );
             move_uploaded_file($filename,  $destFile);
 
-            addUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary,$uniquesavename . '.jpg');
-            header("Location: ./index.php");
+            //addUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary,$uniquesavename . '.jpg');
+            $query="Insert Into users (username, password, firstName, lastName, phone, email, birthDate, birthMonth, birthYear, type, salary, photoName, accountStatus) Values('$uname','$pass','$fname','$lname','$phone','$email','$date','$month','$year','$role','$salary','".$uniquesavename . '.jpg'."' , 'active');";
+            $result=execute($query);
+            if($result==true)
+            {
+                header("Location: ./index.php");
+            }
+            else{
+                print_r($result);
+            }
         }
     }
 ?>

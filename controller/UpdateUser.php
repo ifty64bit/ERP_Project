@@ -1,10 +1,13 @@
 <?php
-    include("../controller/common/fileIO.php");
+    //include("../controller/common/fileIO.php");
+    include("../model/db_config.php");
     $target_dir = "../assets/uploads/";
-    $user=getUserByUname($_GET['uname']);
-    $uname=$user['uname'];
+    $username=$_GET['username'];
+    $query="Select * from users where username='$username'";
+    $user=get($query)[0];
+    $uname=$user['username'];
     $unameErr="";
-    $pass=$user['pass'];
+    $pass=$user['password'];
     $passErr="";
     $fname=$user['firstName'];
     $fnameErr="";
@@ -14,20 +17,18 @@
     $phoneErr="";
     $email=$user['email'];
     $emailErr="";
-    $dates=explode("/",$user['dateOfBirth']);
-    $date=$dates[0];
+    $date=$user['birthDate'];
     $dateErr="";
-    $month=$dates[1];
+    $month=$user['birthMonth'];
     $monthErr="";
-    $year=$dates[2];
+    $year=$user['birthYear'];
     $yearErr="";
-    $role=$user['role'];
+    $role=$user['type'];
     $roleErr="";
     $subRole="";
     $salary=$user['salary'];
-    $status=$user['account-status'];
-    $photo=$user['photo'];
-    $accountStatus=$user['account-status'];
+    $status=$user['accountStatus'];
+    $photo=$user['photoName'];
     $hasErr=false;
 
     function checkMail($email)

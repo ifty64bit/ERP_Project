@@ -1,6 +1,6 @@
 <?php
     include('../controller/common/redir.php');
-    if(isset($_GET['uname']))
+    if(isset($_GET['username']))
     {
         include('../controller/UpdateUser.php');
     }
@@ -26,7 +26,7 @@
                     <tr>
                         <td colspan="3" style="text-align: center">
                             <?php
-                                if(isset($_GET['uname']))
+                                if(isset($_GET['username']))
                                 {
                                     echo "<h2>Edit User</h2>";
                                 }
@@ -160,7 +160,7 @@
                         </td>
                     </tr>
                     <?php
-                    if(isset($_GET['uname'])) {
+                    if(isset($_GET['username'])) {
                         echo "
                         <tr>
                             <td>

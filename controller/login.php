@@ -1,7 +1,8 @@
 <?php
 session_start();
 $rootPath = $_SERVER['DOCUMENT_ROOT'];
-include($rootPath."/ERP/controller/common/fileIO.php");
+//include($rootPath."/ERP/controller/common/fileIO.php");
+include($rootPath."/ERP/model/db_config.php");
 
 $uname="";
 $uname_error="";
@@ -46,14 +47,16 @@ if( isset($_POST["login"]))
 
     if($hasError==false)
     {
-        $loginData=login($uname, $pass, $type);
-        if($loginData == false)
+        //$loginData=login($uname, $pass, $type);
+        $query="Select * From users Where username='$uname' and password='$pass' and type='$type'";
+        $loginData=get($query)[0];
+        if(count($loginData)==0)
         {
             $loginErr="Invalid Username or Password";
         }
         else
         {
-            $_SESSION['user']=$loginData['uname'];
+            $_SESSION['user']=$loginData['username'];
             header("Location: ../view/index.php");
         }
     }
