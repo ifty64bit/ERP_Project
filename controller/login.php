@@ -49,14 +49,14 @@ if( isset($_POST["login"]))
     {
         //$loginData=login($uname, $pass, $type);
         $query="Select * From users Where username='$uname' and password='$pass' and type='$type'";
-        $loginData=get($query)[0];
+        $loginData=get($query);
         if(count($loginData)==0)
         {
             $loginErr="Invalid Username or Password";
         }
         else
         {
-            $_SESSION['user']=$loginData['username'];
+            $_SESSION['user']=$loginData[0]['username'];
             header("Location: ../view/index.php");
         }
     }

@@ -15,6 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/global.css">
+    <script src="./addUser.js"></script>
     <title>Add User</title>
 </head>
 <body>
@@ -41,7 +42,7 @@
                             <label for="uname">Username</label>
                         </td>
                         <td>
-                            <input type="text" name="uname" id="uname" required <?php echo "value=".$uname ?>>
+                            <input type="text" name="uname" id="uname" oninput="checkUsername(this)" <?php echo "value=".$uname ?>>
                         </td>
                         <td><?php echo $unameErr ?></td>
                     </tr>
@@ -62,7 +63,7 @@
                             <label for="pass">Password</label>
                         </td>
                         <td>
-                            <input type="password" name="pass" id="password" required <?php echo "value=".$pass ?>>
+                            <input type="password" name="pass" id="password" oninput="checkP(this)" <?php echo "value=".$pass ?>>
                             <span><?php echo $passErr ?></span>
                         </td>
                     </tr>
@@ -71,7 +72,7 @@
                             <label for="fname">First Name</label>
                         </td>
                         <td>
-                            <input type="text" name="fname" id="firstname" required <?php echo "value=".$fname ?>>
+                            <input type="text" name="fname" id="firstname" oninput="checkFname(this)" <?php echo "value=".$fname ?>>
                             <span><?php echo $fnameErr ?></span>
                         </td>
                     </tr>
@@ -80,7 +81,7 @@
                             <label for="lname">Last Name</label>
                         </td>
                         <td>
-                            <input type="text" name="lname" id="lastname" required <?php echo "value=".$lname ?>>
+                            <input type="text" name="lname" id="lastname" oninput="checkLname(this)" <?php echo "value=".$lname ?>>
                             <span><?php echo $lnameErr ?></span>
                         </td>
                     </tr>
@@ -89,7 +90,7 @@
                             <label for="phone">Phone</label>
                         </td>
                         <td>
-                            <input type="text" name="phone" id="phone" required <?php echo "value=".$phone ?>>
+                            <input type="text" name="phone" id="phone" oninput="checkPhone(this)" <?php echo "value=".$phone ?>>
                             <span><?php echo $phoneErr ?></span>
                         </td>
                     </tr>
@@ -98,7 +99,7 @@
                             <label for="email">Email</label>
                         </td>
                         <td>
-                            <input type="text" name="email" id="email" required <?php echo "value=".$email ?>>
+                            <input type="text" name="email" id="email" oninput="checkEmail(this)" <?php echo "value=".$email ?>>
                             <span><?php echo $emailErr ?></span>
                         </td>
                     </tr>
@@ -156,7 +157,7 @@
                             <label for="salary">Salary</label>
                         </td>
                         <td>
-                            <input type="number" name="salary" id="salary" required <?php echo "value=".$salary ?>>
+                            <input type="number" name="salary" id="salary" oninput="checkSalary(this)" <?php echo "value=".$salary ?>>
                         </td>
                     </tr>
                     <?php
@@ -176,7 +177,7 @@
                         </tr>
                         <tr>
                             <td colspan='2' style='text-align: center;'>
-                                <input type='submit' name='submit' class='btn' value='Update User'>
+                                <input type='submit' name='submit' id='add' class='btn' value='Update User'>
                             </td>
                         </tr>
                         ";
@@ -185,7 +186,7 @@
                         echo "
                         <tr>
                             <td colspan='2' style='text-align: center;'>
-                                <input type='submit' name='submit' class='btn' value='Add User'>
+                                <input type='submit' name='submit' id='add' class='btn' value='Add User'>
                             </td>
                         </tr>
                         ";

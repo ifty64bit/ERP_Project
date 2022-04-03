@@ -8,6 +8,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../assets/global.css">
+	<script type="text/javascript" src="./login.js"></script>
 	<title>Login</title>
 </head>
 <body>
@@ -32,14 +33,14 @@
 					<tr>
 						<td>User Name:</td>
 						<td>
-							<input type="text" name="uname">
+							<input type="text" name="uname" id="uname" oninput="checkUsername(this)">
 						</td>
 						<td><?php echo $uname_error ?></td>
 					</tr>
 					<tr>
 						<td>Password:</td>
 						<td>
-							<input type="password" name="pass">
+							<input type="password" name="pass" id="pass" oninput="checkP(this)">
 						</td>
 						<td><?php echo $pass_error ?></td>
 					</tr>
@@ -50,7 +51,7 @@
 					</tr>
 					<tr>
 						<td colspan="2" style="text-align: center;">
-							<input class="btn" type="submit" name="login" value="Log in">
+							<input class="btn" type="submit" name="login" id="login" value="Log in">
 						</td>
 					</tr>
 				</table>
