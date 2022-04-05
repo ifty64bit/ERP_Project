@@ -15,3 +15,16 @@ CREATE TABLE USERS(
     photoName varchar(50) not null,
     PRIMARY KEY(id)
 );
+
+CREATE TABLE auctions(
+	id int AUTO_INCREMENT NOT NULL,
+    seller_id int NOT NULL,
+    title varchar(50) NOT NULL,
+    description TEXT NOT NULL,
+    init_price int NOT NULL,
+    cur_price int,
+    sold_to int,
+    status varchar(20) NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(seller_id) REFERENCES users(id)
+);

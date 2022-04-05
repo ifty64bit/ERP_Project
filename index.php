@@ -13,17 +13,18 @@
 <body>
 	<section id="header">
 		<div class="wrapper">
-			<h1>ERP System</h1>
+			<h1>Auction System</h1>
 		</div>
 	</section>
 	<section id="main">
 		<div class="main_wrapper">
 			<div>
-				<h1 style="font-size: 5rem;">Welcome To ERP System</h1>
+				<h1 style="font-size: 5rem;">Welcome To Online Auction System</h1>
 				
 			</div>
 			<div style="display:flex; justify-content: space-evenly;">
 				<a href="./view/login.php"><button class="btn">Login</button></a>
+				<a href="./view/Signup.php"><button class="btn">Signup</button></a>
 			</div>
 		</div>
 	</section>

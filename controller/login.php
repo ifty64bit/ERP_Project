@@ -40,7 +40,7 @@ if( isset($_POST["login"]))
 		$pass=$_POST['pass'];
 	}
 
-    if ($_POST['login_as'] == "stuff" || $_POST['login_as'] == "admin")
+    if ($_POST['login_as'] == "stuff" || $_POST['login_as'] == "admin" || $_POST['login_as'] == "user")
     {
         $type = $_POST['login_as'];
     }
@@ -57,6 +57,7 @@ if( isset($_POST["login"]))
         else
         {
             $_SESSION['user']=$loginData[0]['username'];
+            $_SESSION['role']=$loginData[0]['type'];
             header("Location: ../view/index.php");
         }
     }

@@ -1,6 +1,4 @@
-<?php
-include("../controller/common/redir.php");
-?>
+<?php include('../controller/ViewRunningAuctions.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,17 +6,17 @@ include("../controller/common/redir.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/global.css">
-    <title>Portal</title>
+    <title>Running Auction</title>
 </head>
 <body>
-    <?php include("./components/Header.php"); ?>
+    <?php include('./components/Header.php') ?>
     <?php
-        if($_SESSION['role']=='user')
+        if(count($result)==0)
         {
-            include("./components/UserPortal.php");
+            echo "<h3 class='flex-center'>No Auction is running</h3>";
         }
         else{
-            include("./components/AdminPortal.php");
+            print_r($result);
         }
     ?>
 </body>
