@@ -10,4 +10,10 @@
             <h3>Manage User</h3>
         </div>
     </a>
+
+    <a href="./ViewRunningAuctions.php">
+        <div class="card">
+            <h3>View Running Auction</h3>
+        </div>
+    </a>
 </div>

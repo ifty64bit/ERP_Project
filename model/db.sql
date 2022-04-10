@@ -28,3 +28,13 @@ CREATE TABLE auctions(
     PRIMARY KEY(id),
     FOREIGN KEY(seller_id) REFERENCES users(id)
 );
+
+CREATE Table Bids(
+    id int AUTO_INCREMENT,
+    prop_id int not null,
+    bid int not null,
+    bidder_id int not null,
+    PRIMARY KEY(id),
+    FOREIGN Key(prop_id) REFERENCES auctions(id) ON DELETE CASCADE,
+    FOREIGN Key(bidder_id) REFERENCES users(id) ON DELETE CASCADE
+);

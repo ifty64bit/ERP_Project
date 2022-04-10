@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../assets/global.css">
+    <script src="./signup.js"></script>
     <title>Signup</title>
 </head>
 <body>
@@ -17,6 +18,9 @@
 		</div>
 	</section>
     <section>
+        <div id="umessage" style="background-color: #ff4016; padding:1rem; color:white; display: none;">
+            Username Is Already Taken, Try Another One
+        </div>
         <div class="flex-center" style="height: 90vh;">
             <form action="" method="post" enctype="multipart/form-data" style="margin-top: 70px;">
                 <fieldset class="blur-bg">
@@ -31,7 +35,7 @@
                                 <label for="username">Username</label>
                             </td>
                             <td>
-                                <input type="text" name="username" id="uname" <?php echo "value=".$username ?>>
+                                <input type="text" name="username" id="uname" oninput="checkUsername(this)" <?php echo "value=".$username ?>>
                             </td>
                             <td><?php echo $usernameErr ?></td>
                         </tr>

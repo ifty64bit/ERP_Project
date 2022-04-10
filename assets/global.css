@@ -91,6 +91,14 @@ body {
   margin-bottom: 1rem;
 }
 
+.mb{
+  margin-bottom: 1rem;
+}
+
+.p{
+  padding: 1rem;
+}
+
 .flex-center{
   display: flex;
   justify-content: center;

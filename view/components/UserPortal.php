@@ -1,13 +1,14 @@
 <div class="mx my flex-center">
-        <a href="./ViewRunningAuctions.php">
+
+        <a href="./AddAuction.php">
             <div class="card">
-                <h3>View Running Auction</h3>
+                <h3>Sell Property</h3>
             </div>
         </a>
 
-        <a href="./ManageUser.php">
+        <a href="./ViewRunningAuctions.php">
             <div class="card">
-                <h3>Sell Property</h3>
+                <h3>View Running Auction</h3>
             </div>
         </a>
 
@@ -17,7 +18,7 @@
             </div>
         </a>
 
-        <a href="./ManageUser.php">
+        <a href="./Profile.php">
             <div class="card">
                 <h3>Profile</h3>
             </div>

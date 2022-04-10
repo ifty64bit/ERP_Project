@@ -1,5 +1,6 @@
 <?php
 include('../model/db_config.php');
-$query="Select * From auctions Where status='running'";
+//need to maping the id to the auction id
+$query="Select * From auctions Where status='active'";
 $result = get($query);
 ?>
