@@ -24,7 +24,7 @@
                             <label for="uname">Username</label>
                         </td>
                         <td>
-                            <input type="text" name="uname" disabled id="uname" oninput="checkUsername(this)" <?php echo "value=".$uname ?>>
+                            <input type="text" name="uname" disabled id="uname" <?php echo "value=".$uname ?>>
                         </td>
                         <td>You can not change username</td>
                     </tr>
@@ -45,7 +45,7 @@
                             <label for="pass">Password</label>
                         </td>
                         <td>
-                            <input type="password" name="pass" id="password" oninput="checkP(this)" <?php echo "value=".$pass ?>>
+                            <input type="password" name="pass" id="password" <?php echo "value=".$pass ?>>
                             <span><?php echo $passErr ?></span>
                         </td>
                     </tr>

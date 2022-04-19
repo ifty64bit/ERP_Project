@@ -30,12 +30,30 @@ include("../controller/Auction.php");
                 <p><?php echo $latestBid ?></p>
             </div>
             <div class="mb">
-                <h4>Bid</h4>
                 <form action="" method="post">
-                    <input type="number" name="bid" id="bid">
-                    <p><?php echo $errMsg ?></p>
-                    <input type='submit' name="submit" class="btn space-x" value="Bid">
+                    <?php
+                        if($result['status']=="sold")
+                        {
+                            echo "<p></p>";
+                        }
+                        elseif($result['username']==$_SESSION['user'] && $latestBid == "No Bid Yet")
+                        {
+                            echo "<p></p>";
+                        }
+                        elseif($result['username']==$_SESSION['user'])
+                        {
+                            echo "<input type='submit' name='sell' class='btn p mt' style='width: 100%; background-color:chartreuse; border-radius: 0; color:black' value='Sell'>";
+                        }
+                        else
+                        {
+                            echo "<h4>Bid</h4>";
+                            echo "<input type='number' name='bid' id='bid'>";
+                            echo "<p>$errMsg<?p>";
+                            echo "<input type='submit' name='submit' class='btn mt' value='Bid'>";
+                        }
+                    ?>
                 </form>
+                
             </div>
         </div>
     </div>

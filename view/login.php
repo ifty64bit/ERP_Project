@@ -25,7 +25,6 @@
 						<td>Login As:</td>
 						<td>
 							<select name="login_as">
-								<option value="stuff">Stuff</option>
 								<option value="admin">Admin</option>
 								<option value="user">User</option>
 							</select>

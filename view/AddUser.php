@@ -137,29 +137,6 @@
                             <?php echo $dateErr."<br>".$monthErr."<br>".$yearErr ?>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <label for="role">Role</label>
-                        </td>
-                        <td>
-                            <select name="role" id="role">
-                                <option value="----" disabled selected>----</option>
-                                <option value="admin" <?php echo $role=='admin'?'selected':'' ?>>Admin</option>
-                                <option value="stuff" <?php echo $role=='stuff'?'selected':'' ?>>Stuff</option>
-                            </select>
-                        </td>
-                        <td>
-                            <?php echo $roleErr ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="salary">Salary</label>
-                        </td>
-                        <td>
-                            <input type="number" name="salary" id="salary" oninput="checkSalary(this)" <?php echo "value=".$salary ?>>
-                        </td>
-                    </tr>
                     <?php
                     if(isset($_GET['username'])) {
                         echo "

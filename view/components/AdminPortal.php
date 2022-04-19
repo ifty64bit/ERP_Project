@@ -16,4 +16,10 @@
             <h3>View Running Auction</h3>
         </div>
     </a>
+
+    <a href="./ViewSoldAuction.php">
+        <div class="card">
+            <h3>View Sold Auction</h3>
+        </div>
+    </a>
 </div>

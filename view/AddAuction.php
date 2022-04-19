@@ -11,6 +11,7 @@
     <title>Add Auction</title>
 </head>
 <body>
+    <?php include("./components/Header.php") ?>
     <div id="main">
         <div class="main-wrapper blur-bg">
             <form action="" method="post" enctype="multipart/form-data">

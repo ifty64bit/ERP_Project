@@ -20,10 +20,10 @@ if( isset($_POST["login"]))
 			$hasError=true;
 			$uname_error="Field Is Required";
     }
-    elseif(strlen($_POST['uname'])<5)
+    elseif(strlen($_POST['uname'])<4)
 	{
 		$hasError=true;
-		$uname_error="Username must be greater then 5";
+		$uname_error="Username must be greater then 4";
 	}
 	else
 	{
@@ -40,7 +40,7 @@ if( isset($_POST["login"]))
 		$pass=$_POST['pass'];
 	}
 
-    if ($_POST['login_as'] == "stuff" || $_POST['login_as'] == "admin" || $_POST['login_as'] == "user")
+    if ($_POST['login_as'] == "admin" || $_POST['login_as'] == "user")
     {
         $type = $_POST['login_as'];
     }

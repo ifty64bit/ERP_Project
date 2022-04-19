@@ -20,10 +20,10 @@
     $monthErr="";
     $year="";
     $yearErr="";
-    $role="";
-    $roleErr="";
-    $subRole="";
-    $salary="";
+    //$role="";
+    //$roleErr="";
+    //$subRole="";
+    //$salary="";
     $status="";
     $hasErr=false;
 
@@ -132,50 +132,6 @@
             $email=$_POST['email'];
         }
 
-        if( empty($_POST["date"]) )
-        {
-            $dateErr="Field Is Required";
-        }
-        else
-        {
-            $date=$_POST['date'];
-        }
-
-        if( empty($_POST["month"]) )
-        {
-            $monthErr="Field Is Required";
-        }
-        else
-        {
-            $month=$_POST['month'];
-        }
-
-        if( empty($_POST["year"]) )
-        {
-            $yearErr="Field Is Required";
-        }
-        else
-        {
-            $year=$_POST['year'];
-        }
-
-        if( empty($_POST["role"]) )
-        {
-            $roleErr="Field Is Required";
-        }
-        else
-        {
-            $role=$_POST['role'];
-        }
-        if(empty($_POST['salary']))
-        {
-            $hasErr=true;
-            $salaryErr="Field Is Required";
-        }
-        else{
-            $salary=$_POST['salary'];
-        }
-
         if(empty($_POST['date']))
         {
             $hasErr=true;
@@ -203,15 +159,6 @@
             $year=$_POST['year'];
         }
 
-        if(empty($_POST['role']))
-        {
-            $hasErr=true;
-            $roleErr="Please User Role";
-        }
-        else{
-            $role=$_POST['role'];
-        }
-
         if($hasErr==false)
         {
             $uniquesavename=time().uniqid(rand());
@@ -221,7 +168,7 @@
             move_uploaded_file($filename,  $destFile);
 
             //addUser($uname,$pass,$fname,$lname,$phone,$email,$date,$month,$year,$role,$subRole,$salary,$uniquesavename . '.jpg');
-            $query="Insert Into users (username, password, firstName, lastName, phone, email, birthDate, birthMonth, birthYear, type, salary, photoName, accountStatus) Values('$uname','$pass','$fname','$lname','$phone','$email','$date','$month','$year','$role','$salary','".$uniquesavename . '.jpg'."' , 'active');";
+            $query="Insert Into users (username, password, firstName, lastName, phone, email, birthDate, birthMonth, birthYear, type, salary, photoName, accountStatus) Values('$uname','$pass','$fname','$lname','$phone','$email','$date','$month','$year','admin','0','".$uniquesavename . '.jpg'."' , 'active');";
             $result=execute($query);
             if($result==true)
             {

@@ -44,6 +44,7 @@ function checkMail($email)
     {
         if( empty($_POST["pass"]) )
         {
+            $hasErr=true;
             $passErr="Field Is Required";
         }
         elseif(strlen($_POST["pass"])<4)
@@ -58,6 +59,7 @@ function checkMail($email)
 
         if( empty($_POST["fname"]) )
         {
+            $hasErr=true;
             $fnameErr="Field Is Required";
         }
         elseif(strlen($_POST["fname"])<4)
@@ -72,6 +74,7 @@ function checkMail($email)
 
         if( empty($_POST["lname"]) )
         {
+            $hasErr=true;
             $lnameErr="Field Is Required";
         }
         elseif(strlen($_POST["lname"])<4)
@@ -86,6 +89,7 @@ function checkMail($email)
 
         if( empty($_POST["phone"]) )
         {
+            $hasErr=true;
             $phoneErr="Field Is Required";
         }
         elseif(strlen($_POST["phone"])<10)
@@ -100,6 +104,7 @@ function checkMail($email)
 
         if( empty($_POST["email"]) )
         {
+            $hasErr=true;
             $emailErr="Field Is Required";
         }
         elseif(checkMail($_POST['email'])==false)
